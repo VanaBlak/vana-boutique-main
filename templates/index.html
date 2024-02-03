@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Vana Botique - Home</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-hexashop.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl-carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lightbox.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+    </head>
+
+
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>                            
+                            <li class="scroll-to-section"><a href="#women">Women's</a></li>
+                            <li class="submenu" >
+                                <a href="javascript:;">Pages</a>
+                                <ul>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/products">Products</a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                            <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+                            <li class="scroll-to-section">
+                                {% if current_user.is_authenticated %}
+                                    <a href="/cart">Cart</a>
+                                {% else %}
+                                    <a href="/login">Cart</a>
+                                {% endif %}
+                            </li>      
+                            <li class="scroll-to-section"><a href="/login">Sign In</a></li>
+                            {% if current_user.is_authenticated %}
+                            <li class="scroll-to-section"><a href="/logout">Logout</a></li>
+                            {% endif %}
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <div class="thumb">
+                            <div class="inner-content">
+                                <h4>{{ welcome_message }}</h4>
+                                <span>A curated collection of sophisticated and stylish women's clothing.</span>
+                                <div class="main-border-button">
+                                    <a href="/products">Purchase Now!</a>
+                                </div>
+                            </div>
+                            <img src="{{ url_for('static', filename='images/left-banner-image.jpg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Top</h4>
+                                            <span>Elevate your wardrobe with chic and versatile women's tops for every occasion.</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Top</h4>
+                                                <p>Elevate your wardrobe with chic and versatile women's tops for every occasion.</p>
+                                                <div class="main-border-button">
+                                                    <a href="/products">Discover More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{{ url_for('static', filename='images/baner-right-image-01.jpg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Dress</h4>
+                                            <span>Step into style with our boujie women's dresses, blending timeless allure with contemporary flair.</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Dress</h4>
+                                                <p>Step into style with our boujie women's dresses, blending timeless allure with contemporary flair.</p>
+                                                <div class="main-border-button">
+                                                    <a href="/products">Discover More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{{ url_for('static', filename='images/baner-right-image-02.jpg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Bottoms</h4>
+                                            <span>Elevate your fashion with our boujie women's bottoms, fusing comfort and luxury for a standout look.</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Bottoms</h4>
+                                                <p>Elevate your fashion with our boujie women's bottoms, fusing comfort and luxury for a standout look.</p>
+                                                <div class="main-border-button">
+                                                    <a href="/products">Discover More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{{ url_for('static', filename='images/baner-right-image-03.jpg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Accessories</h4>
+                                            <span>Best Trend Accessories</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Accessories</h4>
+                                                <p>Accentuate your style with our curated accessories, adding the perfect finishing touch to your fashion statement.</p>
+                                                <div class="main-border-button">
+                                                    <a href="/products">Discover More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{{ url_for('static', filename='images/baner-right-image-04.jpg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+   <!-- ***** Women Area Starts ***** -->
+    <section class="section" id="women">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2>Women's Latest</h2>
+                        <span>Explore our Boujie Women's Latest collection, where every detail radiates sophistication and style.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="women-item-carousel">
+                        <div class="owl-women-item owl-carousel">
+                            {% for product in products %}
+                                <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="{{ url_for('single_product', product_id=product.id) }}"><i class="fa fa-eye"></i></a></li>
+                                                <li>
+                                                    {% if current_user.is_authenticated %}
+                                                    <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post" style="display: inline; position: relative;">
+                                                        <button type="submit" class="add-to-cart" style="position: relative;">
+                                                            <i class="fa fa-shopping-cart"></i>
+                                                        </button>
+                                                    </form>
+                                                    
+                                                    {% else %}
+                                                        <a href="/login"><i class="fa fa-shopping-cart"></i></a>
+                                                    {% endif %}
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                        <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.product_name }}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{ product.product_name }}</h4>
+                                        <span>${{ product.price }}</span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Women Area Ends ***** -->
+
+
+
+    <!-- ***** Explore Area Starts ***** -->
+    <section class="section" id="explore">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <h2>Explore Our Products</h2>
+                        <span>Indulge in an exploration of our meticulously curated products, where every piece tells a unique story of elegance and trendsetting style.</span>
+                        <div class="quote">
+                            <i class="fa fa-quote-left"></i><p>Embrace the allure of sophistication with our Boujie Collection, where each piece is a statement of timeless elegance and refined fashion. Elevate your style, define your essence.</p>
+                        </div>
+                        
+                        <div class="main-border-button">
+                            <a href="/products">Discover More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="leather">
+                                    <h4>Leather Bags</h4>
+                                    <span>Latest Collection</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="first-image">
+                                    <img src="{{ url_for('static', filename='images/explore-image-01.jpg') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="second-image">
+                                    <img src="{{ url_for('static', filename='images/explore-image-02.jpg') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="types">
+                                    <h4>Different Types</h4>
+                                    <span>Over 304 Products</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Explore Area Ends ***** -->
+
+    <!-- ***** Social Area Starts ***** -->
+    <section class="section" id="social">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Social Media</h2>
+                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row images">
+                <div class="col-2">
+                    <div class="thumb">
+                        <div class="icon">
+                            <a href="/products">
+                                <h6>Fashion</h6>
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/instagram-01.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="thumb">
+                        <div class="icon">
+                            <a href="/products">
+                                <h6>New</h6>
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/instagram-02.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="thumb">
+                        <div class="icon">
+                            <a href="/products">
+                                <h6>Brand</h6>
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/instagram-03.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="thumb">
+                        <div class="icon">
+                            <a href="/products">
+                                <h6>Makeup</h6>
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/instagram-04.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="thumb">
+                        <div class="icon">
+                            <a href="/products">
+                                <h6>Leather</h6>
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/instagram-05.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="thumb">
+                        <div class="icon">
+                            <a href="/products">
+                                <h6>Bag</h6>
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/instagram-06.jpg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Social Area Ends ***** -->
+
+    <!-- ***** Subscribe Area Starts ***** -->
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
+                        <span>Details to details is what makes Vana Boujie Botique different from the other themes.</span>
+                    </div>
+                    <form id="subscribe" action="" method="get">
+                        <div class="row">
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-2">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                            </fieldset>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <ul>
+                                <li>Store Location:<br><span>Edmonton, Alberta, Canada</span></li>
+                                <li>Phone:<br><span>780-020-0340</span></li>
+                                <li>Office Location:<br><span>Edmonton, Alberta, Canada</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul>
+                                <li>Work Hours:<br><span>07:30 AM - 9:30 PM Daily</span></li>
+                                <li>Email:<br><span>vanabotique@gmail.com</span></li>
+                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Subscribe Area Ends ***** -->
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <div class="logo">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="hexashop ecommerce templatemo">
+                        </div>
+                        <ul>
+                            <li><a href="#">Edmonton, Alberta, Canada</a></li>
+                            <li><a href="#">vanabotique@gmail.com</a></li>
+                            <li><a href="#">780-020-0340</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Shopping &amp; Categories</h4>
+                    <ul>
+                        <li><a href="#">Top/Shirt Shopping</a></li>
+                        <li><a href="#">Bottom/Pants Shopping</a></li>
+                        <li><a href="#">Accessories Shopping</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="/">Homepage</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Help &amp; Information</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2024 Vana Boujie Botique, Ltd. All Rights Reserved. 
+                        
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery-2.1.0.min.js') }}"></script>
+
+
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- Plugins -->
+    <script src="{{ url_for('static', filename='js/owl-carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/accordions.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datepicker.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrollreveal.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/imgfix.min.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/slick.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/lightbox.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/isotope.js') }}"></script>
+    
+    <!-- Global Init -->
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+</html>
